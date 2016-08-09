@@ -1,2 +1,20 @@
 ---
 # defaults file for semaphor
+
+# Required during deb package installation
+semaphor_apt_packages:
+  - gconf-service
+  - gconf2
+  - git
+  - gvfs-bin
+  - libxtst6
+  - xdg-utils
+
+semaphor_deb_package_url: "https://spideroak.com/releases/semaphor/debian"
+semaphor_version: "1.1.1"
+semaphor_deb_package_filename: "{{ 'semaphor_'+semaphor_version+'_amd64.deb' }}"
+semaphor_download_directory: /usr/local/src
+
+# Hard-coded as from v1.1.1; the Semaphor project does not use GPG signatures
+# for verification (yet), so SHA256 checksum over TLS is the best we've got.
+semaphor_deb_package_sha256: cb567dfe237996a625059f28dbb751be50e2d6799fd29e995b8843ac5acaab9f

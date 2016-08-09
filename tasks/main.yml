@@ -1,2 +1,24 @@
 ---
 # tasks file for semaphor
+- name: Install Semaphor apt dependencies.
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ semaphor_apt_packages }}"
+
+- name: Download Semaphor deb package.
+  get_url:
+    url: "{{ semaphor_deb_package_url }}"
+    dest: "{{ semaphor_download_directory }}/"
+    checksum: "sha256:{{ semaphor_deb_package_sha256 }}"
+  register: _semaphor_download_result
+
+# Necessary to inspect the registered result for the get_url task because URL
+# 301s to whatever the latest version is.
+- name: Set fact for Semaphor deb package name.
+  set_fact:
+    semaphor_deb_package_filename: "{{ _semaphor_download_result.dest|basename }}"
+
+- name: Install Semaphor deb package.
+  apt:
+    deb: "{{ semaphor_download_directory }}/{{ semaphor_deb_package_filename }}"

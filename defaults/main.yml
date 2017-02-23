@@ -15,13 +15,13 @@ semaphor_deb_package_url: "https://spideroak.com/releases/semaphor/debian"
 # This version number will need to be manually bumped as new releases are
 # issued. Haven't found a decent API yet for reliably determing the most
 # recent version available and using that.
-semaphor_version: "1.2.7"
+semaphor_version: "1.2.8"
 
 # Hard-coded SHA256 checksum; the Semaphor project does not use GPG signatures
 # for verification (yet), so SHA256 checksum over TLS is the best we've got.
 # Checksums retrieved from:
-#   https://spideroak.com/articles/semaphor-127-release-notes-21-february-2017
-semaphor_deb_package_sha256: 52d24c8c5137fd476194c3a0399cbb6ab4147e2a9802e23b530a17c336fc26ef
+# https://spideroak.com/articles/semaphor-128-release-notes-23-february-2017
+semaphor_deb_package_sha256: db101a181534fe44a885de97887dcf47265481317af524454b344d5c63d1cde6
 
 semaphor_deb_package_filename: "{{ 'semaphor_'+semaphor_version+'_amd64.deb' }}"
 semaphor_download_directory: /usr/local/src

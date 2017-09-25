@@ -10,7 +10,7 @@ semaphor_apt_packages:
 
 # This URL will automatically pull down whatever the latest deb package is,
 # but doesn't seem to support requesting a specific version.
-semaphor_deb_package_url: "https://spideroak.com/releases/semaphor/debian"
+semaphor_deb_package_url: "https://spideroak.com/release/semaphor/deb_x64"
 
 # This version number will need to be manually bumped as new releases are
 # issued. Haven't found a decent API yet for reliably determing the most

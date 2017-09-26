@@ -19,8 +19,8 @@ semaphor_version: "1.8"
 
 # Hard-coded SHA256 checksum; the Semaphor project does not use GPG signatures
 # for verification (yet), so SHA256 checksum over TLS is the best we've got.
-# Checksums retrieved from:
-#   https://spideroak.com/articles/semaphor-131-release-notes-20-march-2017
+# Checksums retrieved from (drill into applicable version page):
+#   https://spideroak.com/articles/category/release-notes/semaphor-release-notes/
 semaphor_deb_package_sha256: bcb1661226f387f26432b2479455ae1e7fe041a04a49bbbabf69e6c214631cf9
 
 semaphor_deb_package_filename: "{{ 'semaphor_'+semaphor_version+'_amd64.deb' }}"
